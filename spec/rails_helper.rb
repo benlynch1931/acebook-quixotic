@@ -28,6 +28,11 @@ require './helpers/posts_database_setup_helper.rb'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  config.before :each do
+    reset_posts_table
+    populate_posts_table
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
