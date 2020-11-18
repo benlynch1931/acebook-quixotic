@@ -6,7 +6,7 @@ RSpec.describe Post, type: :model do
     it 'wraps data into instances of Post' do
       result = Post.view_all
       result.each { |each_post|
-        expect(each_post).to be_a Post
+      expect(each_post).to be_a Post
       }
     end
 end
