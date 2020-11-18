@@ -1,18 +1,18 @@
 class Post < ApplicationRecord
 
-  attr_reader :id, :message, :create, :modify
+  attr_reader :id, :message, :create, :update
 
-  def initialize(id:, message:, create:, modify:)
+  def initialize(id:, message:, create:, update:)
     @id = id
     @message = message
     @create = create
-    @modify = modify
+    @update = update
   end
 
   def self.view_all
     connection = self.connect_to_db
     result = connection.exec('SELECT * FROM posts')
-    result.map { |post| Post.new(id: post['id'], message: post['message'], create: post['created_at'], modify: post['modified_at']) }
+    result.map { |post| Post.new(id: post['id'], message: post['message'], create: post['created_at'], update: post['updated_at']) }
   end
 
 

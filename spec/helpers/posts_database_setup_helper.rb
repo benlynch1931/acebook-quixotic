@@ -7,7 +7,7 @@ def create_posts_table
       id SERIAL PRIMARY KEY,
       message VARCHAR(1000),
       created_at TIMESTAMP,
-      modified_at TIMESTAMP);
+      updated_at TIMESTAMP);
       ")
 end
 
@@ -21,10 +21,10 @@ end
 def populate_posts_table
   connection = PG.connect(dbname: 'pgapp_test')
   connection.exec("
-    INSERT INTO posts(message, created_at, modified_at)
+    INSERT INTO posts(message, created_at, updated_at)
     VALUES('first test post to Acebook', '#{(Time.now - 14400).strftime('%Y%m%d %H%M%S')}', '#{(Time.now - 10800).strftime('%Y%m%d %H%M%S')}');
 
-    INSERT INTO posts(message, created_at, modified_at)
+    INSERT INTO posts(message, created_at, updated_at)
     VALUES('Tim is slacking awffffffff', '#{(Time.now - 3600).strftime('%Y%m%d %H%M%S')}', '#{Time.now.strftime('%Y%m%d %H%M%S')}');
   ")
 end
