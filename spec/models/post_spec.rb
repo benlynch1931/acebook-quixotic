@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it { is_expected.to be_a(Post) }
+  it('will return the messages from the database') do
+    expect(Post.view_all).to be_a PG::Result
+  end
+
+  
 
 
 end
