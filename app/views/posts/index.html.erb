@@ -1,7 +1,9 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
+<h1>WELCOME TO ACEBOOK</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.message %></li>
+  <% end %>
+</ul>
 <%= link_to new_post_path do %>
   New post
 <% end %>
