@@ -1,9 +1,35 @@
 <h1>WELCOME TO ACEBOOK</h1>
+
+<h2>Add a Post</h2>
+
+<div class ="create_post">
+
+<%= form_with model: @new_post, local: true do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message, :maxlength => 1000 %>
+
+  <%= form.submit "Add Post" %>
+<% end %>
+</div>
+<br>
+
+
+
+
+
 <ul>
   <% @posts.each do |post| %>
-    <li><%= post.message %></li>
+    <li style='display: flex; width: 500px;'>
+      <div style='display: inline-flex; flex-grow: 1; align-items: flex-end;  width: 120px'>
+        <%= post.message %>
+      </div>
+      <div style='display: inline-flex; flex-grow: 1; align-items: flex-end; '>
+        <%= form_with url: "/posts/#{post.id}", method: 'delete', local: true do |form| %>
+        <%= form.hidden_field :id, :value => post.id %>
+        <%= form.submit "Delete", :id => "delete#{post.id}"%>
+        <% end %>
+      </div>
+    </li>
+    <br>
   <% end %>
 </ul>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
