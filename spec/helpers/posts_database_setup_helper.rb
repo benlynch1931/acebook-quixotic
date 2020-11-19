@@ -21,7 +21,7 @@ def reset_posts_table
 end
 
 def populate_posts_table
-  connection = PG.connect(dbname: 'pgapp_test')
+  connection = PG.connect(dbname: 'pgapp_development')
   connection.exec("
     INSERT INTO posts(message, created_at, updated_at)
     VALUES(
