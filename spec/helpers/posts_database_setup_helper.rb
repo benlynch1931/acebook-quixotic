@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pg'
 
 def create_posts_table
@@ -22,9 +24,15 @@ def populate_posts_table
   connection = PG.connect(dbname: 'pgapp_test')
   connection.exec("
     INSERT INTO posts(message, created_at, updated_at)
-    VALUES('first test post to Acebook', '#{(Time.now - 14400).strftime('%Y%m%d %H%M%S')}', '#{(Time.now - 10800).strftime('%Y%m%d %H%M%S')}');
+    VALUES(
+      'first test post to Acebook',
+      '#{(Time.now - 14_400).strftime('%Y%m%d %H%M%S')}',
+      '#{(Time.now - 10_800).strftime('%Y%m%d %H%M%S')}');
 
     INSERT INTO posts(message, created_at, updated_at)
-    VALUES('Tim is slacking awffffffff', '#{(Time.now - 3600).strftime('%Y%m%d %H%M%S')}', '#{Time.now.strftime('%Y%m%d %H%M%S')}');
+    VALUES(
+      'Tim is slacking awffffffff',
+      '#{(Time.now - 3600).strftime('%Y%m%d %H%M%S')}',
+      '#{Time.now.strftime('%Y%m%d %H%M%S')}');
   ")
 end

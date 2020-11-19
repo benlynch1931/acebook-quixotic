@@ -1,5 +1,8 @@
-class Post < ApplicationRecord
+# frozen_string_literal: true
 
+
+# class connects to databse to CRUD data needed, then wraps into the class instance
+class Post < ApplicationRecord
   attr_reader :id, :message, :create, :update
 
   def initialize(id:, message:, create:, update:)
@@ -10,13 +13,17 @@ class Post < ApplicationRecord
   end
 
   def self.view_all
-    connection = self.connect_to_db
+    connection = connect_to_db
     result = connection.exec('SELECT * FROM posts')
-    result.map { |post| Post.new(id: post['id'], message: post['message'], create: post['created_at'], update: post['updated_at']) }
+    result.map do |post|
+      Post.new(
+        id: post['id'],
+        message: post['message'],
+        create: post['created_at'],
+        update: post['updated_at']
+      )
+    end
   end
-
-
-  private
 
   def self.connect_to_db
     if ENV['RAILS_ENV'] == 'test'
@@ -25,5 +32,4 @@ class Post < ApplicationRecord
       PG.connect(dbname: 'pgapp_development')
     end
   end
-
 end
