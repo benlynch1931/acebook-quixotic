@@ -5,6 +5,11 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.view_all
-    puts 'REACHED THE CONTROLLER'
   end
+
+  def create
+    @post = Post.create(message: params[:message] )
+    puts 'Creating me now!!!!'
+  end
+
 end

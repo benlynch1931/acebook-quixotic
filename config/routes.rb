@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get('/posts', to: 'posts#index')
   resources :posts
 
-  # post('/posts', to: 'posts#create')
+  post('/posts', to: 'posts#create')
+
 end

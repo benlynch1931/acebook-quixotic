@@ -25,6 +25,15 @@ class Post < ApplicationRecord
     end
   end
 
+  def self.create(message:)
+    connection = connect_to_db
+    connection.exec("INSERT INTO posts(message, created_at, updated_at) VALUES('#{message}', '#{Time.now}', '#{Time.now}')")
+    
+  end
+
+
+  private
+
   def self.connect_to_db
     if ENV['RAILS_ENV'] == 'test'
       PG.connect(dbname: 'pgapp_test')
