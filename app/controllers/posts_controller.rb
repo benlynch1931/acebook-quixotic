@@ -24,6 +24,9 @@ class PostsController < ApplicationController
     Post.delete(id: params[:id])
     # change the url, runs through controller to the view
     redirect_to '/posts'
+
+    # index
+    # render 'index'
   end
 
 end
