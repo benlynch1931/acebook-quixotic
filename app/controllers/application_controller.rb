@@ -2,6 +2,15 @@
 
 # Parent class that all subsequent controller's inherit from
 class ApplicationController < ActionController::Base
+  # before_action :require_login
+  #
+  # def require_login
+  #   unless current_user
+  #     flash[:error] = "LOG IN FIRST PLEASE"
+  #     redirect_to users_url
+  #   end
+  # end
+
   helper_method :current_user
   def current_user
     if session[:user_id]
