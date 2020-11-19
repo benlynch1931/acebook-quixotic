@@ -3,6 +3,7 @@
 
 # Controller in charge of routes involving Acebook posts
 class PostsController < ApplicationController
+
   # Get post info from database
   def index
     @posts = Post.view_all
@@ -18,9 +19,11 @@ class PostsController < ApplicationController
     render 'index'
   end
 
+# delete info from database
   def destroy
     Post.delete(id: params[:id])
 
+    # change the url, runs through controller to the view
     redirect_to '/posts'
   end
 
