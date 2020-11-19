@@ -4,12 +4,12 @@
 class ApplicationController < ActionController::Base
   # before_action :require_login
   #
-  # def require_login
-  #   unless current_user
-  #     flash[:error] = "LOG IN FIRST PLEASE"
-  #     redirect_to users_url
-  #   end
-  # end
+  def require_login
+    unless current_user
+      flash[:error] = "LOG IN FIRST PLEASE"
+      redirect_to (root_url) and return 
+    end
+  end
 
   helper_method :current_user
   def current_user

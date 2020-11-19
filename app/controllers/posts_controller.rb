@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   # Get post info from database
   def index
+    require_login
     @posts = Post.view_all
   end
 
