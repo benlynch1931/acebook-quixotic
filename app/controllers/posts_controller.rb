@@ -22,7 +22,6 @@ class PostsController < ApplicationController
 # delete info from database
   def destroy
     Post.delete(id: params[:id])
-
     # change the url, runs through controller to the view
     redirect_to '/posts'
   end

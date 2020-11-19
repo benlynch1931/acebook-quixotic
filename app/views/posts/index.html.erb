@@ -26,7 +26,7 @@
       <div style='display: inline-flex; flex-grow: 1; align-items: flex-end; '>
         <%= form_with url: "/posts/#{post.id}", method: 'delete', local: true do |form| %>
         <%= form.hidden_field :id, :value => post.id %>
-        <%= form.submit "Delete" %>
+        <%= form.submit "Delete", :id => "delete#{post.id}"%>
         <% end %>
       </div>
     </li>
