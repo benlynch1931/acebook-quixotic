@@ -1,12 +1,21 @@
-<h1>Welcome to Acebook!</h1>
-<p>
-<%= flash[:error] %>
-</p>
-<% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to "Log Out", logout_path %>
-<% else %>
-  <%= link_to "Sign Up", signup_path %> or
-  <%= link_to "Log In", login_path %>
-<% end %>
-<p id=”notice”><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <div class="logo"></div>
+  <body class="home-index-body">
+    <div class="navigation-bar"> </div>
+    <p>
+    <%= flash[:error] %>
+    </p>
+      <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log Out", logout_path %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path %> or
+      <%= link_to "Log In", login_path %>
+    <% end %>
+    <p id=”notice”><%= notice %></p>
+  </body>
+</html>
