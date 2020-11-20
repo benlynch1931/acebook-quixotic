@@ -2,10 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body_sub {
+  margin: 0;
+}
+
 .title {
   text-align: center;
+  font-family: garamond;
+  background-color: orange;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
 }
+
 
 .user_interface {
   background-color: aqua;
+  padding: 200px 50px 50px 200px;
+}
+
+.Sign_Up {
+  padding: 200px 50px 50px 200px;
 }

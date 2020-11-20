@@ -1,4 +1,8 @@
+<html>
+
+<body class="body_sub">
 <h1 class="title">Welcome to Acebook!</h1>
+
 
 <p>
 <%= flash[:error] %>
@@ -9,8 +13,14 @@
     Logged in as <%= current_user.email %>.
     <%= link_to "Log Out", logout_path %>
   <% else %>
+    <div class="Sign_Up">
     <%= link_to "Sign Up", signup_path %> or
+  </div>
     <%= link_to "Log In", login_path %>
   <% end %>
   <p id=”notice”><%= notice %></p>
 </div>
+
+</body>
+
+</html>
