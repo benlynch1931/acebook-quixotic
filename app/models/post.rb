@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'uri'
+
 
 # class connects to databse to CRUD data needed, then wraps into the class instance
 class Post < ApplicationRecord
@@ -40,8 +42,12 @@ class Post < ApplicationRecord
   private
 
   def self.connect_to_db
+
     if ENV['RAILS_ENV'] == 'test'
       PG.connect(dbname: 'pgapp_test')
+    elsif ENV['RAILS_ENV'] == 'production'
+      uri = URI.parse(ENV['DATABASE_URL'])
+      PG.connect(uri.hostname, uri.port)
     else
       PG.connect(dbname: 'pgapp_development')
     end
