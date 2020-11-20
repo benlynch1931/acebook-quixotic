@@ -17,10 +17,21 @@
 
 
 .user_interface {
-  background-color: aqua;
-  padding: 200px 50px 50px 200px;
+  background-color: burlywood;
+  width: fit-content;
+  margin: auto;
 }
 
 .Sign_Up {
-  padding: 200px 50px 50px 200px;
+padding: 4px 4px;
+border-style: solid;
+border-color: pink;
+font-size: 2rem;
+text-align: center;
+}
+
+.log_in {
+  padding: 4px 4px;
+  text-align: center;
+  font-size: 1.5rem;
 }
