@@ -1,4 +1,7 @@
-<h1>Welcome to Acebook!</h1>
+
+<div class="header">
+  <h1>Welcome to Assbook!</h1>
+</div>
 <!-- <p>
 <%= flash[:error] %>
 </p>
@@ -26,40 +29,34 @@
   <% end %>
 
 
-  <h1>Sign up</h1>
   <%= form_with url: "/users", method: "post", local: true do |form| %>
-  <div class="field">
+  <div class="signup">
+    <h1>Sign up</h1
     <%= form.label :email %>
+    <br>
     <%= form.email_field :email, id: :user_email %>
-  </div>
-
-  <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password, id: :user_password %>
-  </div>
-
-  <div class="field">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
-  </div>
-
-  <div class="actions">
     <%= form.submit  %>
   </div>
   <% end %>
 
+  <div class="login">
 
-  <h1>Login</h1>
   <%= form_tag sessions_path do |form| %>
-    <div class=”field”>
+    <h1>Login</h1>
       <%= label_tag :email %>
       <%= text_field_tag :email %>
-    </div>
-    <div class=”field”>
       <%= label_tag :password %>
       <%= password_field_tag :password %>
-    </div>
-    <div class=”actions”>
       <%= submit_tag 'Login' %>
-    </div>
   <% end %>
+</div>
+
+<img src="https://www.freeclipartnow.com/d/11300-1/Donkey-reading.jpg">
+
+<div class="footer">
+Team quixotic
+</div>
