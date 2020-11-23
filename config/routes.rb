@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   delete('/posts/:id', to: 'posts#destroy')
 
+  get '/posts/:id/editor' => 'posts#editor' , as: 'editor_post' # edit
 end
 
 # undefined local variable or method `‘home' for #<ActionDispatch::Routing::Mapper:0x00007ffcb9b94160> (NameError)

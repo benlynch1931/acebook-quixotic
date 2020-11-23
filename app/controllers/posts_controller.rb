@@ -31,6 +31,13 @@ class PostsController < ApplicationController
 
     # index
     # render 'index'
+
+    def editor
+      post = Post.message.find(params[:id])
+      respond_to do |format| 
+        format.html { render :editor, locals: { post: post } }
+      end
+    end
   end
 
 end
