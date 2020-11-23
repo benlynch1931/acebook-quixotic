@@ -19,7 +19,7 @@
   <% @posts.each do |post| %>
     <li style='display: flex; width: 500px;'>
       <div style='display: inline-flex; flex-grow: 1; align-items: flex-end;  width: 120px'>
-        <%= post.message %>
+        <%= post.message.gsub("''", "'") %>
       </div>
       <div style='display: inline-flex; flex-grow: 1; align-items: flex-end; '>
         <%= form_with url: "/posts/#{post.id}", method: 'delete', local: true do |form| %>

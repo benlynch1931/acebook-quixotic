@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # puh info to database
   def create
     # push new post to database
-    @new_post = Post.create(message: params[:message], created_at: Time.now, updated_at: Time.now)
+    @new_post = Post.create(message: params[:message].gsub("'", "''"), created_at: Time.now, updated_at: Time.now, user_id: session[:user_id])
     # refresh @posts to include new record in database
     # index
     # re-render the page as there's new info to list from @posts
