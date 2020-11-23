@@ -1,5 +1,5 @@
 <h1>Welcome to Acebook!</h1>
-<p>
+<!-- <p>
 <%= flash[:error] %>
 </p>
 <% if current_user %>
@@ -8,5 +8,58 @@
 <% else %>
   <%= link_to "Sign Up", signup_path %> or
   <%= link_to "Log In", login_path %>
-<% end %>
+<% end %> -->
 <p id=”notice”><%= notice %></p>
+
+  <% if !!@user %>
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+  <% end %>
+
+
+  <h1>Sign up</h1>
+  <%= form_with url: "/users", method: "post", local: true do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit  %>
+  </div>
+  <% end %>
+
+
+  <h1>Login</h1>
+  <%= form_tag sessions_path do |form| %>
+    <div class=”field”>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
+    <div class=”field”>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class=”actions”>
+      <%= submit_tag 'Login' %>
+    </div>
+  <% end %>

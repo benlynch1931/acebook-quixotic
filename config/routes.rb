@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   # render index.html.erb with the SAME info in @posts
 
   delete('/posts/:id', to: 'posts#destroy')
-
+  post('/users', to: 'users#create')
 end
 
 # undefined local variable or method `‘home' for #<ActionDispatch::Routing::Mapper:0x00007ffcb9b94160> (NameError)
