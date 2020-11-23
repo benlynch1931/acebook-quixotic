@@ -17,9 +17,9 @@ class PostsController < ApplicationController
     # push new post to database
     @new_post = Post.create(message: params[:message], created_at: Time.now, updated_at: Time.now)
     # refresh @posts to include new record in database
-    index
+    # index
     # re-render the page as there's new info to list from @posts
-    render 'index'
+    redirect_to '/posts'
   end
 
 # delete info from database
