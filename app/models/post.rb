@@ -47,7 +47,8 @@ class Post < ApplicationRecord
       PG.connect(dbname: 'pgapp_test')
     elsif ENV['RAILS_ENV'] == 'production'
       uri = URI.parse(ENV['DATABASE_URL'])
-      PG.connect(uri.hostname, uri.port)
+      dbname = uri.path.split('/')[1]
+      PG.connect(dbname: dbname)
     else
       PG.connect(dbname: 'pgapp_development')
     end
