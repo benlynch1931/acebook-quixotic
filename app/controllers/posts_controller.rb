@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     return if require_login
     # @posts = Post.view_all
     @posts = Post.all.order(created_at: :desc)
+    p @posts
+    @posts.each do |post|
+      p post.user.email
+    end
   end
 
   # puh info to database
