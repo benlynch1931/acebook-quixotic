@@ -31,13 +31,20 @@ class PostsController < ApplicationController
 
     # index
     # render 'index'
+  end
 
-    def editor
-      post = Post.message.find(params[:id])
-      respond_to do |format| 
-        format.html { render :editor, locals: { post: post } }
-      end
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "Article was updated"
+      redirect_to @post
+    else
+      flash[:notice] = "Article was NOT updated"
+      render 'editor'
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
 end

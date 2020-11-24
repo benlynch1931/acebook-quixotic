@@ -27,6 +27,13 @@
         <%= form.submit "Delete", :id => "delete#{post.id}"%>
         <% end %>
       </div>
+
+
+      <div style='display: inline-flex; flex-grow: 1; align-items: flex-end;'>
+        <%= link_to 'edit', "/posts/#{post.id}", class:"button" %>
+      </div>
+
+      
     </li>
     <br>
   <% end %>

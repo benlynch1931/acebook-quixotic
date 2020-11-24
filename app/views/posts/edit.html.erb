@@ -1,12 +1,11 @@
-<h2>Edit Your Post</h2>
+<h2>Edit Post</h2>
 
-<%= form_with model: post, url: editor_post_path, method :patch, local: true, scope: :post do |f| %>
+<div class ="create_post">
 
-  <div>
-    <%= f.label :post %><br>
-    <%= f.text_area :post %>
-  </div>
+<%= form_with model: @new_post, local: true do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message, :maxlength => 1000 %>
 
-  <%= f.submit 'Update Post' %>
-
+  <%= form.submit "Add Post" %>
 <% end %>
+</div>
