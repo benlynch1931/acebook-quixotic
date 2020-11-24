@@ -2,6 +2,12 @@
 
 Rails.application.routes.draw do
 
+  namespace :api do
+    namespace :v1 do
+      resources :posts, only: [:index, :show, :create, :destroy]
+    end
+  end
+
   root :to => 'home#index'
   # make this a habbit to white our roots
   resources :users

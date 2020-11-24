@@ -4,7 +4,7 @@ module Api
       # set an method to execute before executing an action
       before_action :check_basic_auth
       # override provided method by `skipping` it
-      skip_before_action :verify_authenticity_token
+      # skip_before_action :verify_authenticity_token
 
       private
 
@@ -43,3 +43,5 @@ module Api
       end
 
     end
+  end
+end

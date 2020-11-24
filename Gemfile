@@ -8,6 +8,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'will_paginate'
+
 gem 'bcrypt', '~> 3.1.7'
 # Use ActiveModel has_secure_password
 gem 'travis'
