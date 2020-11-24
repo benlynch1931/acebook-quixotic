@@ -1,8 +1,8 @@
-json.pagination do
-  json.current_page @posts.current_page
-  json.per_page @posts.per_page
-  json.total_entries @posts.total_entries
-end
+# json.pagination do
+#   json.current_page @posts.current_page
+#   json.per_page 400
+#   json.total_entries @posts.total_entries
+# end
 
 json.posts @posts do |posts|
   json.id posts.id
