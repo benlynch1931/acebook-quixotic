@@ -8,9 +8,9 @@ json.posts @posts do |posts|
   json.id posts.id
 
   json.user do
-    json.id posts.user_id
+    json.id posts.user.id
     # json.name posts.user.name
-    # json.email posts.user.email
+    json.email posts.user.email
   end
 
   json.message posts.message
