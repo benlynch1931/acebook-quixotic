@@ -19,6 +19,10 @@ gem 'travis'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
+# Use JWT Tokens as http API authentification
+gem 'jwt'
+# Use instead of private controller methods
+gem 'simple_command'
 
 gem 'uri'
 # Use Puma as the app server
