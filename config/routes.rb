@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   delete('/posts/:id', to: 'posts#destroy')
 
+  post 'authenticate', to: 'authentication#authenticate'
 end
 
 # undefined local variable or method `‘home' for #<ActionDispatch::Routing::Mapper:0x00007ffcb9b94160> (NameError)
