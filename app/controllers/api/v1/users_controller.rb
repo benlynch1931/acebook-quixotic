@@ -7,7 +7,8 @@ module Api
       # end
 
       def create
-        log(request.body.read)
+        puts request.body.read
+        logger.info(request.body.read)
       end
     end
   end

@@ -13,11 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api do
-    namespace :v1 do
-      resources :users, only: [:create]
-    end
-  end
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :users, only: [:create]
+  #   end
+  # end
+
+  post('api/v1/users', to: 'users#create')
 
   root :to => 'home#index'
   # make this a habbit to white our roots
@@ -35,7 +37,7 @@ Rails.application.routes.draw do
   # go to index.html.erb
   resources :posts
 
-  post('/posts', to: 'posts#create')
+  # post('/posts', to: 'posts#create')
   # go to PostsController
   # go to create function
   # run create function
