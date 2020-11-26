@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   post 'authenticate', to: 'authentication#authenticate'
 end
 
+
 # undefined local variable or method `‘home' for #<ActionDispatch::Routing::Mapper:0x00007ffcb9b94160> (NameError)
 # this was caused because of lack of consistent indentation ''"" and even farious other forms of dashes that are caused by style type in different computers
 

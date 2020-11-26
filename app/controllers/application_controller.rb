@@ -12,30 +12,3 @@ class ApplicationController < ActionController::API
     render json: { error: 'Not Authorized' }, status: 401 unless @current_user
   end
 end
-
-
-
-
-
-
-#   def require_login
-#     unless current_user
-#       flash[:error] = "LOG IN FIRST PLEASE"
-#       redirect_to (root_url)
-#       return true
-#     end
-#   end
-
-#   helper_method :current_user
-#   def current_user
-#     if session[:user_id]
-#       @current_user ||= User.find(session[:user_id])
-#     else
-#       @current_user = nil
-#     end
-#   end
-# end
-
-# class ApplicationController < ActionController::Base
-#   protect_from_forgery with: :exception
-# end
