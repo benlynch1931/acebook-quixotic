@@ -7,6 +7,11 @@ Rails.application.routes.draw do
       resources :posts, only: [:index, :show, :create, :destroy]
     end
   end
+  namespace :api do
+    namespace :v1 do
+      resources :authenticate
+    end
+  end
 
   root :to => 'home#index'
   # make this a habbit to white our roots
