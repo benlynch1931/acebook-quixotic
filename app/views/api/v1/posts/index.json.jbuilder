@@ -9,7 +9,8 @@ json.posts @posts do |posts|
 
   json.user do
     json.id posts.user.id
-    # json.name posts.user.name
+    json.first posts.user.first_name
+    json.last posts.user.last_name
     json.email posts.user.email
   end
 
