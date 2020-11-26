@@ -9,7 +9,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'will_paginate'
-
+gem 'rails-erd', group: :development
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'bcrypt', '~> 3.1.7'
