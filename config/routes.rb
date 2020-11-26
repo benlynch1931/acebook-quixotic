@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :users
+    end
+  end
+
   root :to => 'home#index'
   # make this a habbit to white our roots
   resources :users
