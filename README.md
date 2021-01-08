@@ -3,7 +3,7 @@
 
 _API for Facebook Clone._
 
-## Quickstart
+## Installing and Running
 
 First, clone this repository. Then:
 
